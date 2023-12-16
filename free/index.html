@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 3H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM4 5h16v2l-8 5-8-5V5zm0 12v-2.52l7.05 4.42c.24.15.51.23.78.23s.54-.08.78-.23L20 14.48V17c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1zm14.91-4.33L12 15 2.09 9.67C2.04 9.64 2 9.57 2 9.53V7.48l8 5 8-5v2.05c0 .04-.04.11-.09.12z'%3E%3C/path%3E%3C/svg%3E" type="image/svg+xml">
+<script>
+        window.addEventListener('load', function () {
+            var form = document.getElementById('emailForm');
+
+            if (form) {
+                form.reset();
+            }
+        });
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><i class="fas fa-campground"></i> The Camp22</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://t.me/thecamp22"><i class="fab fa-telegram"></i> Camp22</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://t.me/leaked_method"><i class="fas fa-file-signature"></i> Leaked Method</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://frduckist.t.me"><i class="fas fa-code"></i> Developer</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class="alert alert-info text-center" role="alert">
+        <strong>Premium Version Coming Soon!</strong> Join here for updates.
+        <button class="btn btn-warning ml-2" onclick="window.location.href='https://t.me/thecamp22'">Join Now</button>
+    </div>
+
+    <div class="container">
+         <div class="card">
+             <div class="card-body">
+                 <h2 class="card-title text-center"><i class="fas fa-envelope"></i> Free Emails Sender</h2>
+                 <form id="emailForm" action="https://lmadminpanel.000webhostapp.com/mailtd/free.php" method="post">
+                     <div class="form-group">
+                    <label for="fromName"><i class="fas fa-user"></i> Sender Name:</label>
+                    <input type="text" class="form-control" id="fromName" name="fromName" required oninput="validateInput('fromName', 'fromNameWarning')">
+                    <div id="fromNameWarning" class="text-danger"></div>
+                </div>
+                      <div class="form-group">
+                         <label for="toEmail"><i class="fas fa-inbox"></i> Recipient Email:</label>
+                         <input type="email" class="form-control" id="toEmail" name="toEmail" required>
+                     </div>
+                      <div class="form-group">
+                         <label for="subject"><i class="fas fa-heading"></i> Subject:</label>
+                         <input type="text" class="form-control" id="subject" name="subject" required>
+                     </div>
+                      <div class="form-group">
+                         <label for="message"><i class="fas fa-comment"></i> Message:</label>
+                         <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                     </div>
+                      <button type="button" class="btn btn-primary btn-block" onclick="validateAndSubmit()"><i class="fas fa-paper-plane"></i> Send Email</button>
+                 </form>
+             </div>
+         </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 THE CAMP22. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+<script>
+    var formValid = true;
+
+    function validateInput(inputId, warningId) {
+        var input = document.getElementById(inputId);
+        var warningElement = document.getElementById(warningId);
+        if (input && warningElement) {
+            var inputValue = input.value.toLowerCase();
+            var forbiddenWords = ['google','account','accounts', 'facebook', 'twitter', 'amazon', 'microsoft', 'apple', 'linkedin', 'instagram', 'snapchat', 'whatsapp', 'netflix', 'paypal', 'spotify', 'reddit', 'pinterest', 'tumblr', 'dropbox', 'slack', 'zoom', 'tiktok', 'example.com', 'example.org'];
+
+            for (var i = 0; i < forbiddenWords.length; i++) {
+                if (inputValue.includes(forbiddenWords[i])) {
+                    warningElement.innerHTML = 'You cannot use this word here.';
+                    formValid = false; 
+                    return;
+                }
+            }
+            warningElement.innerHTML = '';
+            formValid = true;
+        }
+    }
+
+    function validateAndSubmit() {
+        formValid = true;
+        validateInput('fromName', 'fromNameWarning');
+        validateInput('fromEmail', 'fromEmailWarning');
+
+        if (formValid) {
+            document.getElementById('emailForm').submit();
+        } else {
+            alert('Check All Fields');
+        }
+    }
+</script>
+</body>
+</html>
+
